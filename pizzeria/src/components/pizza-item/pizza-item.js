@@ -7,11 +7,19 @@ class PizzaItem extends React.Component {
     render() {
         var info = this.props.data;
         return (
-            <div>
-                <div>{info.name}</div>
-                <div>{info.description}</div>
-                <div>{info.price}</div>
+            <div className="card">
+                <img className="card-img-top" src={info.image} alt=""></img>
+                <div className="card-body">
+                    <h5 className="card-title">{info.name}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Price: {info.price} ISK</h6>
+                    <p className="card-text">{info.description}</p>
+                    
+                    {/* TODO: Implement the cart and link this button to something*/}
+                    <a href="#" className="btn btn-primary">Add to cart</a>
+                </div>
+
             </div>
+
         )
     }
 }

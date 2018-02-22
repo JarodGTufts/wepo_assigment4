@@ -12,9 +12,6 @@ import { createStore } from 'redux';
 // Import misc dependencies
 import registerServiceWorker from './registerServiceWorker';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
 // TODO: Make this actually produce a store
 let store = createStore(function () { return null; })
 

@@ -7,6 +7,9 @@ import Offers from '../pages/offers/offers.js';
 import About from '../pages/about/about.js';
 import Cart from '../pages/cart/cart.js';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
 // A simple routing app for rendering the correct page
 const App = () => {
     return (

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './components/App/App.js';
+import App from './components/app/app.js';
 
 // Import redux dependencies
 import { Provider } from 'react-redux';
@@ -11,8 +11,9 @@ import { createStore } from 'redux';
 
 // Import misc dependencies
 import registerServiceWorker from './registerServiceWorker';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 // TODO: Make this actually produce a store
 let store = createStore(function () { return null; })

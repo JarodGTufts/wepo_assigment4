@@ -1,36 +1,26 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Navbar from '../navbar/navbar.js';
+import Menu from '../pages/menu/menu.js';
+import Offers from '../pages/offers/offers.js';
+import About from '../pages/about/about.js';
+import Cart from '../pages/cart/cart.js';
 
-/*
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <button type="button" className="btn btn-primary">Learn More</button>
-            </div>
-        );
-    }
-}
-*/
-
-// A simple routing app for rendering the correct type
+// A simple routing app for rendering the correct page
 const App = () => {
     return (
-        <div class="container-fluid">
+        <div className="container-fluid">
+            <Navbar />
             <Switch>
-                <Route exact path="/" render={() => <div className="h1">Hello</div>} />
-                <Route path="/about" render={() => <div>About</div>} />
+                <Route exact path="/" render={() => <Menu />} />
+                <Route exact path="/offers" render={() => <Offers />} />
+                <Route exact path="/about" render={() => <About />} />
+                <Route exact path="/cart" render={() => <Cart />} />
             </Switch>
         </div>
     )
 }
+
 
 export default App;

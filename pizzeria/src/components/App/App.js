@@ -24,10 +24,12 @@ class App extends Component {
 // A simple routing app for rendering the correct type
 const App = () => {
     return (
-        <Switch>
-            <Route exact path="/" render={() => <div>Hello</div>} />
-            <Route path="/about" render={() => <div>About</div>} />
-        </Switch>
+        <div class="container-fluid">
+            <Switch>
+                <Route exact path="/" render={() => <div className="h1">Hello</div>} />
+                <Route path="/about" render={() => <div>About</div>} />
+            </Switch>
+        </div>
     )
 }
 

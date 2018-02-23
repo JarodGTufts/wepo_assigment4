@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+
 
 
 
@@ -12,10 +14,10 @@ class PizzaItem extends React.Component {
                 <div className="card-body">
                     <h5 className="card-title">{info.name}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Price: {info.price} ISK</h6>
-                    <p className="card-text">{info.description}</p>
                     
                     {/* TODO: Implement the cart and link this button to something*/}
-                    <a href="#" className="btn btn-primary">Add to cart</a>
+                    <button href="#" className="btn btn-primary mr-1 mb-1">Add to cart</button>
+                    <Link to="" className="btn btn-primary mb-1">More Info</Link>
                 </div>
 
             </div>

@@ -4,7 +4,7 @@ import React from 'react';
 const About  = () => {
     return (
         <div>
-            <p className='mt-2'><h4>Welcome to Pizzerio Uno - a family-friendly neighborhood joint</h4></p> 
+            <p className='mt-2 h4'>Welcome to Pizzerio Uno - a family-friendly neighborhood joint</p> 
             <p>We are obsessively devoted to the craft of pizza making. Offering top-notch
             thin-crust Neapolitan pies, fresh local salads, craft beer and 
             excellent wines in a comfortable and welcoming atmosphere.</p> 
@@ -20,7 +20,7 @@ const About  = () => {
             house-made meats like brisket and sausages.  Pineapple is not permitted
             on our pizza, although it’s best to ask Gordon for the reason in person.</p>
 
-            <p><h4>It’s just pizza</h4> - this has been our, in house motto, for many years.</p> 
+            <p className="h4">It’s just pizza</p><p> - this has been our, in house motto, for many years.</p> 
             <p>We know pizza is important to many people, including us, otherwise we 
             wouldn’t be working this hard to try to make the best pizza we can. We 
             know we will never be able to meet some peoples expectations when they 

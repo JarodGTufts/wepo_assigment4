@@ -5,7 +5,9 @@ import PizzaList from '../../pizza-list/pizza-list.js';
 
 class Menu extends React.Component {
 
-    // TODO: Turn this into a Redux state chain
+    // TODO: Modify this to create an instance of a data-container
+    // that modifies global store with the response of a GET request
+    
     constructor(props) {
         super(props);
 

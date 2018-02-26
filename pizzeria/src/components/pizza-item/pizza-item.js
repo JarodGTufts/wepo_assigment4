@@ -15,7 +15,7 @@ class PizzaItem extends React.Component {
                     
                     {/* TODO: Implement the cart and link this button to something*/}
                     <button href="#" className="btn btn-primary mr-1 mb-1">Add to cart</button>
-                    <Link to="" className="btn btn-primary mb-1">More Info</Link>
+                    <Link to={"/pizzas/" + info.id} className="btn btn-primary mb-1">More Info</Link>
                 </div>
 
             </div>

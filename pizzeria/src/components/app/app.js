@@ -20,6 +20,8 @@ const App = () => {
             <Navbar />
             <Switch>
                 <Route exact path="/" render={() => <Menu />} />
+                <Route exact path="/pizzas" render={() => <Menu />} />
+
                 <Route exact path="/offers" render={() => <Offers />} />
                 <Route exact path="/about" render={() => <About />} />
                 <Route exact path="/cart" render={() => <Cart />} />

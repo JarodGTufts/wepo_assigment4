@@ -7,6 +7,8 @@ import Offers from '../pages/offers/offers.js';
 import About from '../pages/about/about.js';
 import Cart from '../pages/cart/cart.js';
 import CheckoutForm from '../../components/checkout-form/checkout-form.js';
+import Confirmation from '../pages/confirmation/confirmation.js';
+import Orders from '../pages/orders/orders.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -21,7 +23,9 @@ const App = () => {
                 <Route exact path="/offers" render={() => <Offers />} />
                 <Route exact path="/about" render={() => <About />} />
                 <Route exact path="/cart" render={() => <Cart />} />
-                <Route exact path="/testing" render = {() => <CheckoutForm />} />
+                <Route exact path="/checkout" render = {() => <CheckoutForm />} />
+                <Route exact path="/confirmation" render = {() => <Confirmation />} />
+                <Route exact path="/orders/:telephone" render= {(props) => <Orders {...props} />} />
             </Switch>
         </div>
     )

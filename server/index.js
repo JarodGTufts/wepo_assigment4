@@ -47,6 +47,9 @@ router.get('/orders/:telephone', (req, res) => {
 });
 
 router.post('/orders/:telephone', (req, res) => {
+    
+
+    
     const { telephone } = req.params;
     const order = new Order(req.body);
     orders.hasOwnProperty(telephone) ? orders[telephone].push(order) : orders[telephone] = [order];

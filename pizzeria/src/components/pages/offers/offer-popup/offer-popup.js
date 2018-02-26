@@ -2,10 +2,6 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 
-
-
-
-
 class OfferPopup extends React.Component {
 
 

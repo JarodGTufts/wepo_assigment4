@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-import PizzaList from '../../pizza-list/pizza-list.js';
+import PizzaList from './pizza-list/pizza-list.js';
 
 class Menu extends React.Component {
 

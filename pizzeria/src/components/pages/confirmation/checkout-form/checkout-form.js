@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 import { Redirect } from 'react-router-dom';
 
-import ConfirmPopup from '../confirm-popup/confirm-popup.js';
+import ConfirmPopup from './confirm-popup/confirm-popup.js';
 
 class CheckoutForm extends React.Component {
 

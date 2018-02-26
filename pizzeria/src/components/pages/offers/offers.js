@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-import OfferList from '../../offer-list/offer-list.js';
+import OfferList from './offer-list/offer-list.js';
 
 class Offers extends React.Component {
 

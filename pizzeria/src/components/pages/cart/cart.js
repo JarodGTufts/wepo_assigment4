@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CartList from '../../cart-list/cart-list.js';
+import CartList from './cart-list/cart-list.js';
 
 
 class Cart extends React.Component {

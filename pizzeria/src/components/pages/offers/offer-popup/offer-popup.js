@@ -83,8 +83,8 @@ class OfferPopup extends React.Component {
 
 
 OfferPopup.propTypes = {
-    offer: PropTypes.string,
-    id: PropTypes.number
+    offer: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
 }
 
 export default OfferPopup

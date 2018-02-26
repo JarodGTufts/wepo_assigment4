@@ -20,7 +20,7 @@ class PizzaItem extends React.Component {
                     <h6 className="card-subtitle mb-2 text-muted">Price: {info.price} ISK</h6>
                     
                     {/* TODO: Implement the cart and link this button to something*/}
-                    <button href="#" className="btn btn-primary mr-1 mb-1">Add to cart</button>
+                    <button className="btn btn-primary mr-1 mb-1">Add to cart</button>
                     <Link to={"/pizzas/" + info.id} className="btn btn-primary mb-1">More Info</Link>
                 </div>
 

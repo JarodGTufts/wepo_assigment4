@@ -23,7 +23,7 @@ class OfferList extends React.Component {
 }
 
 OfferList.propTypes = {
-    offers: PropTypes.arrayOf(PropTypes.object)
+    offers: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default OfferList

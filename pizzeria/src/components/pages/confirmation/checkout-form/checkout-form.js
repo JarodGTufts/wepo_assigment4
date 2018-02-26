@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 import { Redirect } from 'react-router-dom';
 
-import ConfirmPopup from './confirm-popup/confirm-popup.js';
+import ConfirmPopup from '../confirm-popup/confirm-popup.js';
 
 
 // This component renders the form that the user will submit to the
@@ -15,6 +15,7 @@ class CheckoutForm extends React.Component {
     //      https://gist.github.com/verticalgrain/195468e69f2ac88f3d9573d285b09764
     constructor () {
             super();
+            
             this.state = {
                 fireRedirect: false
             }

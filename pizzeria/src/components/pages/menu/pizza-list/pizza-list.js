@@ -31,7 +31,7 @@ class PizzaList extends React.Component {
 }
 
 PizzaList.propTypes = {
-    pizzas: PropTypes.arrayOf(PropTypes.object)
+    pizzas: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default PizzaList

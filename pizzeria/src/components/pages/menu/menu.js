@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 
 import PizzaList from './pizza-list/pizza-list.js';
-
+import PizzaPage from './pizza-page/pizza-page.js';
 
 // This component renders the menu page, passing data retrieved from
 // the server into the PizzaList component
@@ -29,17 +29,38 @@ class Menu extends React.Component {
 
         // Retrieve the pizza listings and and store the result in the local state
         $.get('http://localhost:3500/api/pizzas', (data) => {
-            this.setState({ pizzas: data });
+                this.setState({ pizzas: data });
         });
     }
 
 
     render () {
 
+        
         // Only calls if the state has been updated by a succesful GET call
         if (this.state.pizzas.length > 0) {
+            // If an id is given in the URL, render a specific pizza page
+            if (this.props.match.params.id) {
 
-            return (<div className="row"><PizzaList pizzas={this.state.pizzas} /></div>);
+                // Filter to only include the pizza with the correct id
+                var curr_pizza = this.state.pizzas.filter( (entry) => {
+
+                    return (String(entry.id) === this.props.match.params.id);
+
+                });
+
+                // If the current pizza exists, render the proper page
+                if (curr_pizza) {
+                    return (<PizzaPage data={curr_pizza} />);   
+                }
+                // If not, render an error
+                else {
+                    return (<h3 className="my-3">We're sorry, we could not find a pizza with that id</h3>)
+                } 
+            }
+            else {
+                return (<div className="row"><PizzaList pizzas={this.state.pizzas} /></div>);
+            }
 
         }
         else {

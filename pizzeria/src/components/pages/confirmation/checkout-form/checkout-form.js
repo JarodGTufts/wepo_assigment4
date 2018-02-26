@@ -5,6 +5,10 @@ import { Redirect } from 'react-router-dom';
 
 import ConfirmPopup from './confirm-popup/confirm-popup.js';
 
+
+// This component renders the form that the user will submit to the
+// server in order to check out with their pizas. It renders the
+// appropriate fields when passed in "delivery" or "pickup" as a prop
 class CheckoutForm extends React.Component {
 
     // How to redirect after form submission using react-router from:
@@ -28,6 +32,7 @@ class CheckoutForm extends React.Component {
             name: $('#name').val(),
             telephone: $('#telephone').val(),
             method: this.props.method,
+
             // TODO: Tie this to the state and get the real price of the order
             price: 0,
 
@@ -36,9 +41,10 @@ class CheckoutForm extends React.Component {
             postal: $('#postal').val() ? $('#postal').val() : null
         };
 
-        console.log(JSON.stringify(post_body));
 
         // Send a request to the server
+        // NOTE: I believe that even mild modifications to this ajax code
+        //       will cause an unbelievable amount of work.
         $.ajax({
             url : 'http://localhost:3500/api/orders/' + $('#telephone').val(),
             type: "POST",
@@ -85,6 +91,7 @@ class CheckoutForm extends React.Component {
             );
         }
 
+        // Return the proper form options
         return (
             <div>
             <form onSubmit={this.submitForm}>

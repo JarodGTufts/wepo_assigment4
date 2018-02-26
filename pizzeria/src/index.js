@@ -12,7 +12,7 @@ import { createStore } from 'redux';
 // Import misc dependencies
 import registerServiceWorker from './registerServiceWorker';
 
-// TODO: Make this actually produce a store
+// Big TODO here: Make this actually produce a store
 let store = createStore(function () { return null; })
 
 // Render the BrowserRouter nexted inside a Provider to allow store access

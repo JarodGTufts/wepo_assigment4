@@ -1,6 +1,7 @@
 import React from 'react';
 
-
+// This about page is copied from a collection of Portland, Oregon pizzeria
+// "About" pages
 class About extends React.Component {
     render () {
 

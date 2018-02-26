@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 
+// This class represents a single pizza, and displays the information from
+// the given object data in a readable format
+
+// The big TODO here is to make the "Add to cart" button dispatch an action
+// that is further interpreted by a reducer to add a pizza to the global store
+// and update the cart state with the new item
 class PizzaItem extends React.Component {
     render() {
         var info = this.props.data;

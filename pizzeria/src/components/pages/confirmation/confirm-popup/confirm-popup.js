@@ -1,7 +1,15 @@
 import React from 'react';
 
 
+// This class is a modal popup that appears and allows the user to
+// confirm their purchase after they have entered their information.
 
+// The major TODO here is to connect this popup to the global store,
+// and have it display the items that are currently in the cart.
+// To do so, another component may have to be written (probably should be
+// honestly) that accepts an offer or pizzas object and returns a properly
+// rendered element to display them.
+// I think this would probably go right around where the other TODO is
 class ConfirmPopup extends React.Component {
 
 

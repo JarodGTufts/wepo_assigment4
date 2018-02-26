@@ -1,6 +1,9 @@
 import React from 'react';
 
 
+// This page renders the confirmation text, and shouldn't have
+// to do anything more complicated than displaying some kind of
+// positive text
 class Confirmation extends React.Component {
     
     render () {

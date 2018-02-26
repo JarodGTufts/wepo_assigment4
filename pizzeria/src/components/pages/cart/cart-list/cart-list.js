@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import CartItem from '../cart-item/cart-item.js'
 
 
+// This component renders out all of the items in a users cart
+
 class CartList extends React.Component {
 
     render () {

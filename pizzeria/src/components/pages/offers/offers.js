@@ -3,11 +3,10 @@ import $ from 'jquery';
 
 import OfferList from './offer-list/offer-list.js';
 
+
+// This page renders the list of offers that it retrieves from the server
 class Offers extends React.Component {
 
-    // TODO: Modify this to create an instance of a data-container
-    // that modifies global store with the response of a GET request
-    
     constructor(props) {
         super(props);
 

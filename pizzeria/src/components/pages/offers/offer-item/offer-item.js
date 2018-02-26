@@ -4,8 +4,10 @@ import { PropTypes } from 'prop-types';
 import OfferPopup from '../offer-popup/offer-popup.js';
 
 
-
+// This component provides a visual representation for the offer
+// item that it is fed as a JS object
 class OfferItem extends React.Component {
+    
     render() {
         var info = this.props.data;
 

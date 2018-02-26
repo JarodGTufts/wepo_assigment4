@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import OrderItem from '../order-item/order-item.js'
 
 
+// This component renders a list of all of the orders that it is given as props
 class OrderList extends React.Component {
     render () {
         var to_load = this.props.orders;

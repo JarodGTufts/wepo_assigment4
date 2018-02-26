@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+// Import all of the core pages, which contain the code to render
+// all of the member components that we need
 import Navbar from '../navbar/navbar.js';
 import Menu from '../pages/menu/menu.js';
 import Offers from '../pages/offers/offers.js';
@@ -19,9 +21,14 @@ const App = () => {
         <div className="container-fluid">
             <Navbar />
             <Switch>
+                {/* This redundancy is necessary to serve some kind of home page
+                    when the user goes straight to the root path */}
                 <Route exact path="/" render={() => <Menu />} />
                 <Route exact path="/pizzas" render={() => <Menu />} />
 
+                {/* If any more pages are added, they should go here. This collection
+                    of routes basically replaces an index.js from a standard web server,
+                    and allows for our page to be rendered correctly using react-router */}
                 <Route exact path="/offers" render={() => <Offers />} />
                 <Route exact path="/about" render={() => <About />} />
                 <Route exact path="/cart" render={() => <Cart />} />

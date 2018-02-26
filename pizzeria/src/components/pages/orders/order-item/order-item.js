@@ -2,9 +2,15 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 
+// This component renders an individual order record that it has been passed
+// as a prop.
+
+// A potential TODO on this section is to modify the informatin that is
+// presented based on the type of order, displaying for example the delivery
+// address for delivered orders. 
 class OrderItem extends React.Component {
     render() {
-        console.log(this.props.data);
+
         var info = this.props.data;
 
         return (

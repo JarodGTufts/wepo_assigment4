@@ -2,8 +2,13 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 
+// This component is rendered as the individual items in a users
+// shopping cart.
 
-
+// The big TODO here is to make it so that the "Remove" button dispatches
+// an action which is further interpreted by a pure function reducer to
+// modify the global store and remove the current pizza or offer from the
+// cart.
 class CartItem extends React.Component {
     render() {
         var info = this.props.data;

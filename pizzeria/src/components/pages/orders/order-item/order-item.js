@@ -28,7 +28,7 @@ class OrderItem extends React.Component {
 
 
 OrderItem.propTypes = {
-    data: PropTypes.string
+    data: PropTypes.object
 }
 
 export default OrderItem

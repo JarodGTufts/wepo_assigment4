@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "bootstrap": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.13.0",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
@@ -19,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest --config jest.config.js",
     "eject": "react-scripts eject",
     "todo": "grep -r 'TODO' src | sed G"
   }

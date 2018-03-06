@@ -6,7 +6,7 @@ class About extends React.Component {
     render () {
 
         return (
-            <div>
+            <div id="about_info">
                 <p className='mt-2 h4'>Welcome to Pizzerio Uno - a family-friendly neighborhood joint</p> 
                 <p>We are obsessively devoted to the craft of pizza making. Offering top-notch
                 thin-crust Neapolitan pies, fresh local salads, craft beer and 

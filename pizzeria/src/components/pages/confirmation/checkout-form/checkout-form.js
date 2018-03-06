@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import { PropTypes } from 'prop-types';
 
 import { Redirect } from 'react-router-dom';
 
@@ -112,6 +113,9 @@ class CheckoutForm extends React.Component {
     }
 }
 
+CheckoutForm.propTypes = {
+    method: PropTypes.string.isRequired
+}
 
 
 export default CheckoutForm;

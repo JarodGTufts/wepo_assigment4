@@ -1,12 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App.js';
+
+import { shallow } from 'enzyme';
 
 
-// I didn't write this - it came with the react app prebuilt template
-// that I opted to use at the very beginning
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('Home app tests', () => {
+
+    const component = shallow(<App />);
+
+    it('should have exactly one navbar', () => {
+        expect(component.find('Navbar')).toHaveLength(1);
+    });
+
+    it('should have a switch containing routes', () => {
+        expect(component.find('Switch')).toHaveLength(1);
+    });
 });

@@ -13,7 +13,7 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
 
                 <span className="navbar-brand mb-0 h1">
-                    <img src="http://res.freestockphotos.biz/pictures/16/16525-illustration-of-a-slice-of-pizza-with-toppings-pv.png" width="30" height="30" alt="" />
+                    <img src="http://res.freestockphotos.biz/pictures/16/16525-illustration-of-a-slice-of-pizza-with-toppings-pv.png" width="30" height="30" alt="Logo" />
                     <span className="ml-2">PizzerioUno</span>
                 </span>
 

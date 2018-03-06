@@ -12,9 +12,6 @@ import CheckoutForm from '../pages/confirmation//checkout-form/checkout-form.js'
 import Confirmation from '../pages/confirmation/confirmation.js';
 import Orders from '../pages/orders/orders.js';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
 // A simple routing app for rendering the correct page
 const App = () => {
     return (

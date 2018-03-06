@@ -19,7 +19,7 @@ class PizzaList extends React.Component {
         for (var entry in to_load) {
 
             loaded.push(
-                <div className="col-sm-3" key={to_load[entry].id}>
+                <div className="col-sm-3 pizza-item" key={to_load[entry].id}>
                     <PizzaItem data={to_load[entry]} />
                 </div>
             );

@@ -1,11 +1,11 @@
-
+import React from "react";
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addPizza } from "./actions/actions.js";
-//import { addPizza } from "../actions/actions.js";
 
+import { Component } from "react";
+import { connect } from "react-redux";
+
+import { addPizza } from "../../../../actions/actions.js";
 
 // This class represents a single pizza, and displays the information from
 // the given object data in a readable format
@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch => {
     addPizza: PizzaItem => dispatch(addPizza(PizzaItem))
   };
 };
+
 
 class PizzaItem extends React.Component {
     render() {

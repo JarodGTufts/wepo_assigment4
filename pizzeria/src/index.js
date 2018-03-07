@@ -8,7 +8,6 @@ import store from './store.js';
 
 // Import redux dependencies
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
 // Import misc dependencies
 import registerServiceWorker from './registerServiceWorker';

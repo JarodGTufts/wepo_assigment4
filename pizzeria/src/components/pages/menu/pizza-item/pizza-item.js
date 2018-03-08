@@ -14,14 +14,15 @@ import { addPizza } from "../../../../actions/actions.js";
 // that is further interpreted by a reducer to add a pizza to the global store
 // and update the cart state with the new item
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    data: ownProps.data,
     addPizza: PizzaItem => dispatch(addPizza(PizzaItem))
   };
 };
 
 
-class PizzaItem extends React.Component {
+class ConntectedPizzaItem extends React.Component {
     render() {
         var info = this.props.data;
         return (
@@ -32,7 +33,7 @@ class PizzaItem extends React.Component {
                     <h6 className="card-subtitle mb-2 text-muted">Price: {info.price} ISK</h6>
 
                     {/* TODO: Implement the cart and link this button to something*/}
-                    <button className="btn btn-primary mr-1 mb-1" onClick={this.addPizzaToStore(info.id, info.name)}>Add to cart</button>
+                    <button className="btn btn-primary mr-1 mb-1" onClick={()=>{this.addPizzaToStore(info.id, info.name)}}>Add to cart</button>
                     <Link to={"/pizzas/" + info.id} className="btn btn-primary mb-1">More Info</Link>
                 </div>
 
@@ -40,15 +41,16 @@ class PizzaItem extends React.Component {
 
         )
     }
+  }
 
     addPizzaToStore(id, name)
     {
       this.props.addPizza({id:id, name:name});
     };
-};
 
 
-PizzaItem.propTypes = {
+
+ConntectedPizzaItem.propTypes = {
     data: PropTypes.shape({
         id: PropTypes.number,
         name: PropTypes.string,
@@ -58,5 +60,6 @@ PizzaItem.propTypes = {
     }).isRequired
 };
 
+const PizzaItem = connect(null, mapDispatchToProps)(ConntectedPizzaItem);
 
 export default PizzaItem;

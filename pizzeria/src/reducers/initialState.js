@@ -8,7 +8,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PIZZA:
-      return { ...state, pizzas: [...state.PizzaList, action.payload] };
+      return { ...state, pizzas: [...state.PizzaList, action.payload] }; //error here
     default:
       return state;
   }

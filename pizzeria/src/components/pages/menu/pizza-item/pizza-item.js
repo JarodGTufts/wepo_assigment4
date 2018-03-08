@@ -34,13 +34,12 @@ class PizzaItem extends React.Component {
 
         )
     }
-  }
 
 };
 
 
 
-ConntectedPizzaItem.propTypes = {
+PizzaItem.propTypes = {
     data: PropTypes.shape({
         id: PropTypes.number,
         name: PropTypes.string,

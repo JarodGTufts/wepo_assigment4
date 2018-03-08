@@ -39,7 +39,7 @@ class CartList extends React.Component {
 }
 
 CartList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.object).isRequired
+    items: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default CartList

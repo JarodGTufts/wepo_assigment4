@@ -57,7 +57,7 @@ class OfferPopup extends React.Component {
             }
 
             for (var index in order_pizzas) {
-                console.log(order_pizzas[index][0]);
+
                 this.props.dispatch(addPizza(order_pizzas[index][0]));
             }
             
@@ -113,7 +113,7 @@ class OfferPopup extends React.Component {
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                            <button type="button" className="btn btn-primary" onClick={ () => add_offer() }>Add to cart</button>
+                            <button type="button" className="btn btn-primary" onClick={ () => add_offer() } data-dismiss="modal">Add to cart</button>
                         </div>
                     </div>
                 </div>

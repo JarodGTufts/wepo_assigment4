@@ -9,8 +9,7 @@ import ConfirmPopup from '../confirm-popup/confirm-popup.js';
 
 
 // This component renders the form that the user will submit to the
-// server in order to check out with their pizzas. It renders the
-// appropriate fields when passed in "delivery" or "pickup" as a prop
+// server in order to check out with their pizzas.
 class CheckoutPresentation extends React.Component {
 
     // How to redirect after form submission using react-router from:
@@ -19,9 +18,16 @@ class CheckoutPresentation extends React.Component {
             super();
 
             this.state = {
-                fireRedirect: false
+                fireRedirect: false,
+                method: null
             }
+
+            this.handleChange = this.handleChange.bind(this);
       }
+
+    handleChange(event) {
+        this.setState({method: event.target.value});
+    }
 
     submitForm = (e) => {
         
@@ -35,6 +41,7 @@ class CheckoutPresentation extends React.Component {
 
         for (var entry in this.props.pizzas) {
             pizza_info.push(this.props.pizzas[entry]["pizza"]);
+            console.log(pizza_info);
         }
 
         var post_body = {
@@ -65,39 +72,65 @@ class CheckoutPresentation extends React.Component {
     render () {
 
         // Return the proper form options
+
+        var questions;
+
+        if (this.state.method) {
+            if (this.state.method === 'deliver') {
+                questions = (
+                    <div className="form-group">
+                        <div id="basics" key="standard">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" className="form-control" id="name" placeholder="Your full name" required />
+                            
+                            <label htmlFor="telephone">Telephone number</label>
+                            <input type="number" className="form-control" id="telephone" placeholder="The digits needed to contact you" required />
+
+                        </div>            
+                        <div id="deliver_inputs" key="delivery_specifics" className="mt-3">
+                            <label htmlFor="address">Address</label>
+                            <input type="text" className="form-control" id="address" placeholder="Where should we send this?" required/>
+                            
+                            <label htmlFor="city">City</label>
+                            <input type="text" className="form-control" id="city" placeholder="What city are you in?" required/>
+                                        
+                            <label htmlFor="postal">Postal code</label>
+                            <input type="number" className="form-control" id="postal" placeholder="ZIP" required/>
+
+                        </div>
+                    </div>
+                    );
+            }
+            else {
+                questions = (
+                    <div className="form-group">
+                        <div id="basics" key="standard">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" className="form-control" id="name" placeholder="Your full name" required />
+                            
+                            <label htmlFor="telephone">Telephone number</label>
+                            <input type="number" className="form-control" id="telephone" placeholder="The digits needed to contact you" required />
+                            
+                        </div>  
+                    </div>      
+                );
+            }
+        }
+
         return (
             <div>
-            <form onSubmit={this.submitForm} id="order_form">
-                <div className="form-group">
-                    <div id="basics" key="standard">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" className="form-control" id="name" placeholder="Your full name" required />
-                        
-                        <label htmlFor="telephone">Telephone number</label>
-                        <input type="number" className="form-control" id="telephone" placeholder="The digits needed to contact you" required />
-                        
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="method_radio" id="pickup_select" value="pickup" required/>
-                            <label className="form-check-label" htmlFor="pickup_select">Pickup</label>
-                        </div>
-                        <div className="form-check form-check-inline mt-2">
-                            <input className="form-check-input" type="radio" name="method_radio" id="deliver_select" value="deliver" required/>
-                            <label className="form-check-label" htmlFor="deliver_select">Delivery</label>
-                        </div>
-
-                    </div>            
-                    <div id="deliver_inputs" key="delivery_specifics" className="mt-3">
-                        <label htmlFor="address">Address (Not needed for pickup)</label>
-                        <input type="text" className="form-control" id="address" placeholder="Where should we send this?" />
-                        
-                        <label htmlFor="city">City (Not needed for pickup)</label>
-                        <input type="text" className="form-control" id="city" placeholder="What city are you in?" />
-                                    
-                        <label htmlFor="postal">Postal code (Not needed for pickup)</label>
-                        <input type="number" className="form-control" id="postal" placeholder="ZIP" />
-
-                    </div>
+            <form onChange={this.handleChange}>
+                <div className="form-check form-check-inline">
+                    <input className="form-check-input" type="radio" name="method_radio" id="pickup_select" value="pickup" required/>
+                    <label className="form-check-label" htmlFor="pickup_select">Pickup</label>
                 </div>
+                <div className="form-check form-check-inline mt-2">
+                    <input className="form-check-input" type="radio" name="method_radio" id="deliver_select" value="deliver" required/>
+                    <label className="form-check-label" htmlFor="deliver_select">Delivery</label>
+                </div>
+            </form>
+            <form onSubmit={this.submitForm} id="order_form">
+                {questions}
                 <button className="btn btn-primary" type="button" data-toggle="modal" data-target="#submitConfirm">Submit order</button>
                 <ConfirmPopup />
             </form>

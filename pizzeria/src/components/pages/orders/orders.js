@@ -3,7 +3,6 @@ import $ from 'jquery';
 
 import OrderList from './order-list/order-list.js';
 
-
 // This component renders a list containing the data that it retrieves from the
 // server, representing all of the previous orders associated with the telephone
 // number that is passed as a URL parameter
@@ -39,7 +38,7 @@ class Orders extends React.Component {
         // Only calls if the state has been updated by a succesful GET call
         if (this.state.orders.length > 0) {
 
-            return (<div className="row"><OrderList orders={this.state.orders} key="0"/></div>);
+            return (<div className="row"><OrderList orders={this.state.orders}/></div>);
 
         }
 

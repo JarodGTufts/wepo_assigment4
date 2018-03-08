@@ -12,7 +12,7 @@ class OrderList extends React.Component {
         for (var entry in to_load) {
 
             loaded.push(
-                <div className="col-sm-3" key={to_load[entry].id}>
+                <div className="container-fluid" key={entry}>
                     <OrderItem data={to_load[entry]} />
                 </div>
             );

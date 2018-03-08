@@ -4,8 +4,6 @@ import { PropTypes } from 'prop-types';
 import { addPizza } from '../../../../actions/add-pizza-action.js';
 import { connect } from 'react-redux';
 
-import $ from 'jquery';
-
 // This popup allows the user to select the pizzas that they would like with
 // the offer they have selected. It checks the offer description that it is
 // passed as a prop and, if that option contains "Two", renders an extra

@@ -53,6 +53,25 @@ class OfferPopup extends React.Component {
                         return obj["name"] == [this.state.second_pizza];
                     })
                 );
+
+                if (this.props.offer.includes("Two for the prize of one")) {
+
+                    var higher = order_pizzas[0][0]["price"] > order_pizzas[1][0]["price"] ? 
+                                        order_pizzas[0][0]["price"] : order_pizzas[1][0]["price"];
+                    order_pizzas[0][0]["price"] = higher;
+                    order_pizzas[1][0]["price"] = 0;
+
+                }
+
+                else if (this.props.offer.includes("Two pizzas and a coke")) {
+                    
+                    order_pizzas[0][0]["price"] = 3000;
+                    order_pizzas[1][0]["price"] = 0;
+
+                }
+            }
+            else {
+                order_pizzas[0][0]["price"] = 1600;
             }
 
             for (var index in order_pizzas) {

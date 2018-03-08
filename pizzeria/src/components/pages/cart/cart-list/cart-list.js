@@ -15,14 +15,17 @@ class CartList extends React.Component {
         var loaded = [];
         var sum = 0;
         var counter = 0;
-        for (var entry in to_load) {
-            sum += to_load[entry]["pizza"].price;
-            
-            loaded.push(
-                <CartItem data={to_load[entry]["pizza"]} key={counter} index={parseInt(entry, 10)}/>
-            );
 
-            counter++;
+        for (var entry in to_load) {
+            if (to_load[entry]["pizza"] != undefined) {
+                sum += to_load[entry]["pizza"].price;
+                
+                loaded.push(
+                    <CartItem data={to_load[entry]["pizza"]} key={counter} index={parseInt(entry, 10)}/>
+                );
+
+                counter++;
+            }
 
         }
 

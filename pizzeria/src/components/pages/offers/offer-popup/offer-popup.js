@@ -15,6 +15,7 @@ class OfferPopup extends React.Component {
     constructor(props) {
         super(props);
 
+
         this.state = {
             first_pizza: "",
             second_pizza: ""
@@ -61,10 +62,13 @@ class OfferPopup extends React.Component {
             
         }
 
-        var option_list = [];
+        var option_list = [
+            <option key="preset">Select a pizza</option>
+        ];
 
         for (var entry in options) {
             option_list.push(<option value={options[entry]["name"]} key={entry}>{options[entry]["name"]}</option>);
+
         }
 
         var pizzas = [];

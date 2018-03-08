@@ -1,0 +1,18 @@
+
+// THE SHAPE OF THE STATE
+
+
+{
+    cart: [
+        // Contains all of the pizzas that are in the cart
+    ]
+
+    available_pizzas: [
+        // Contains all of the pizzas retrieved from the server for access
+        // in multiple places in the app
+    ]
+
+    available_offers: [
+        // Has the same functionality as the available_pizzas
+    ]
+}

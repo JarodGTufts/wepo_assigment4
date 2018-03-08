@@ -11,8 +11,6 @@ import { addPizza } from '../../../../actions/add-pizza-action.js';
 
 class PizzaItem extends React.Component {
 
-
-
     render () {
 
         var info = this.props.data;

@@ -9,15 +9,18 @@ import CartItem from '../cart-item/cart-item.js'
 class CartList extends React.Component {
 
     render () {
+
         var to_load = this.props.items;
+
         var loaded = [];
         var sum = 0;
         var counter = 0;
         for (var entry in to_load) {
-            sum += to_load[entry].price;
 
+            sum += to_load[entry]["pizza"].price;
+            
             loaded.push(
-                <CartItem data={to_load[entry]} key={counter}/>
+                <CartItem data={to_load[entry]["pizza"]} key={counter}/>
             );
 
             counter++;

@@ -1,4 +1,4 @@
-import { updateCart } from './reduce-add-pizza.js';
+import { updateCart as cart } from './reduce-add-pizza.js';
 
 import { combineReducers } from 'redux';
 
@@ -8,5 +8,5 @@ import { combineReducers } from 'redux';
 
 // As more reducers are written, add them here
 export const pizzaApp = combineReducers({
-    updateCart
+    cart
 });

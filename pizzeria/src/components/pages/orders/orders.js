@@ -39,7 +39,7 @@ class Orders extends React.Component {
         // Only calls if the state has been updated by a succesful GET call
         if (this.state.orders.length > 0) {
 
-            return (<div className="row"><OrderList orders={this.state.orders} /></div>);
+            return (<div className="row"><OrderList orders={this.state.orders} key="0"/></div>);
 
         }
 

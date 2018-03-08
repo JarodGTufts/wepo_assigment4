@@ -11,7 +11,8 @@ class Offers extends React.Component {
         super(props);
 
         this.state = {
-            offers: []
+            offers: [],
+            pizzas: []
         };
     }
 
@@ -21,6 +22,11 @@ class Offers extends React.Component {
         $.get('http://localhost:3500/api/offers', (data) => {
             this.setState({ offers: data });
         });
+
+        // Retrieve the pizza listings and and store the result in the local state
+        $.get('http://localhost:3500/api/pizzas', (data) => {
+                this.setState({ pizzas: data });
+        });
     }
 
 
@@ -29,7 +35,7 @@ class Offers extends React.Component {
         // Only calls if the state has been updated by a succesful GET call
         if (this.state.offers.length > 0) {
 
-            return (<div className="row"><OfferList offers={this.state.offers} /></div>);
+            return (<div className="row"><OfferList offers={this.state.offers} pizzas={this.state.pizzas} /></div>);
 
         }
         else {

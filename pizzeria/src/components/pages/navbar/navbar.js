@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 // This component renders the nabar on each page of the site, and provides
 // consistent linkage back to each page for the user at all times.
 
-// If any more pages are added, then there is a TODO here - allow the user
-// to navigate to this page from the navbar by adding another "Link"
 class Navbar extends React.Component {
     render() {
         return (

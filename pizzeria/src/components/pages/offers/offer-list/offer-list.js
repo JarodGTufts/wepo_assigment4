@@ -12,7 +12,7 @@ class OfferList extends React.Component {
 
             loaded.push(
                 <div className="col-sm-3" key={to_load[entry].id}>
-                    <OfferItem data={to_load[entry]} />
+                    <OfferItem data={to_load[entry]} pizzas={this.props.pizzas}/>
                 </div>
             );
 
@@ -23,7 +23,9 @@ class OfferList extends React.Component {
 }
 
 OfferList.propTypes = {
-    offers: PropTypes.arrayOf(PropTypes.object).isRequired
+    offers: PropTypes.arrayOf(PropTypes.object).isRequired,
+    pizzas: PropTypes.arrayOf(PropTypes.object).isRequired,
+
 }
 
 export default OfferList
